@@ -3,150 +3,334 @@
     "name": "Sabbir Ahmed Nahid",
     "initials": "SN",
     "photo": "",
-    "title": "Digital Public Infrastructure & E-Governance Specialist",
-    "headline": "DPI Governance · E-Governance · Systems Architecture",
+    "title": "E-Governance & Digital Transformation Specialist",
+    "headline": "DPI · Business Process Reform · Data Governance · Policy Analysis · Change Management",
+    "shortHeadline": "E-Governance & Digital Transformation",
     "location": "Dhaka, Bangladesh",
     "timezone": "GMT+6",
     "email": "sabbir.nahid@gmail.com",
+    "phone": "",
     "linkedin": "https://www.linkedin.com/in/sabbirahmednahid/",
     "firm": "Synapse Consulting",
     "availability": "Open to international remote consulting assignments"
   },
 
-  "summary": "I help governments and development partners design, govern and implement digital public infrastructure. Over 18 years I have delivered e-governance and DPI programmes in Bangladesh for UNDP, USAID and the British Council.",
+  "summary": "E-governance and digital transformation professional with 18+ years of experience modernising public institutions in Bangladesh. I design and deliver digital public infrastructure, from Bangladesh's national business registry to the NGO Affairs Bureau's integrated e-governance platform, for programmes financed by UNDP, USAID and the British Council.",
 
   "glance": [
     { "label": "Experience", "value": "18+ years in e-governance & DPI" },
-    { "label": "Current role", "value": "National Consultant, UNDP Bangladesh (ISPAT Project)" },
-    { "label": "Practice", "value": "Founder, Synapse Consulting" },
+    { "label": "Current role", "value": "National Consultant, UNDP Bangladesh (ISPAT)" },
+    { "label": "Practice", "value": "CEO & Lead Consultant, Synapse Consulting" },
     { "label": "Partners", "value": "UNDP · USAID · British Council" },
-    { "label": "Based in", "value": "Dhaka, Bangladesh (GMT+6)" },
-    { "label": "Working mode", "value": "Remote, international" }
+    { "label": "Credentials", "value": "ISO 27001 LA · PMP · PRINCE2 · ITIL · Six Sigma BB" },
+    { "label": "Languages", "value": "Bengali (native) · English (professional)" }
   ],
 
   "stats": [
-    { "value": "18+", "label": "Years delivering e-governance and DPI programmes" },
+    { "value": "18+", "label": "Years modernising public institutions in Bangladesh" },
     { "value": "3", "label": "Major development partners: UNDP, USAID, British Council" },
-    { "value": "7", "label": "Professional certifications, incl. PMP, PRINCE2, ISO 27001 LA" },
-    { "value": "4", "label": "Sector domains: CRVS, registries, NGO regulation, disaster MIS" }
+    { "value": "20+", "label": "Regional offices given standardised ICT under UNDP NUPRP" },
+    { "value": "10", "label": "Professional certifications, incl. ISO 27001 LA and PMP" }
   ],
 
   "about": [
-    "My work sits where public policy meets technology. I make sure that national digital systems are not only built, but governed well: clear institutional ownership, sound architecture, secure operations and real adoption by the officials and citizens who depend on them.",
-    "I describe myself as a T-shaped specialist. The deep discipline is DPI governance. The breadth comes from applying it across civil registration and vital statistics, trade and business registries, NGO and civil-society regulation, and disaster management information systems.",
-    "Alongside my consulting work I run Synapse Consulting, mentor project managers through PMI Bangladesh, and research how to measure the governance maturity of foundational DPI."
+    "My work sits where public policy meets technology. I help public institutions move from paper-based, analogue processes to citizen-centric digital services, and make sure those systems are governed well: clear data ownership, sound architecture, secure operations and real adoption by the officials and citizens who depend on them.",
+    "I work across the full reform cycle: as-is analysis and policy research, process redesign with BPMN 2.0, system design and procurement, data governance frameworks, stakeholder engagement, training, and embedding after go-live.",
+    "My career began in software development and UN ICT operations, grew through disaster management and urban poverty programmes, and today centres on digital public infrastructure: Bangladesh's national business registry (RJSC), the NGO Affairs Bureau's e-governance platform, and e-government reform in health and civil registration."
   ],
 
-  "cvProfile": "Digitalisation and systems architecture specialist with 18+ years delivering e-governance and digital public infrastructure (DPI) programmes in Bangladesh for UNDP, USAID and the British Council. T-shaped DPI governance specialist: DPI governance as the core discipline, applied to civil registration and vital statistics (CRVS), trade and business registries, NGO/CSO digitalisation and disaster management information systems. Founder of Synapse Consulting. Available for international remote consulting with UN agencies, international NGOs and donor-funded programmes.",
+  "cvProfile": "E-governance and digital transformation professional with 18+ years of experience modernizing public institutions across Bangladesh. Expert in digital public infrastructure (DPI) design, business process re-engineering (BPMN 2.0), data governance and data management, policy analysis and development, change management, and ICT-enabled service reform. Delivered national-scale DPI for RJSC — Bangladesh's foundational business registry serving every registered company and firm — and NGOAB's integrated e-governance platform under UNDP's ISPAT project. Track record spanning the full reform cycle: as-is analysis, policy research, system design, data governance frameworks, stakeholder engagement, training, and post-deployment embedding across UNDP, USAID, and British Council-financed programmes. ISO 27001:2022 Lead Auditor | PMP | PRINCE2 | ITIL | Six Sigma Black Belt.",
 
   "specialism": {
     "title": "DPI Governance",
-    "layers": ["Policy & institutional design", "Architecture & standards", "Information security", "Implementation & adoption"]
+    "layers": ["Policy & institutional design", "Architecture & standards", "Data governance & security", "Implementation & adoption"]
   },
 
   "sectors": [
-    { "name": "CRVS", "tag": "Civil registration", "text": "Birth and death registration as the foundation of legal identity, service delivery and official statistics." },
-    { "name": "Trade & Business Registry", "tag": "Registries", "text": "Registration and licensing platforms that lower the cost of doing business and give government reliable economic data." },
-    { "name": "NGO / CSO Digitalisation", "tag": "Regulation", "text": "End-to-end digital regulation of NGOs and foreign-funded projects, from registration to approval, fund release and reporting." },
-    { "name": "Disaster MIS", "tag": "Resilience", "text": "Information systems that help agencies plan, coordinate and account for disaster preparedness and response." }
+    { "name": "CRVS", "tag": "Civil registration", "text": "Birth and death registration (BDRIS) as the foundation of legal identity, service delivery and official statistics." },
+    { "name": "Trade & Business Registry", "tag": "Registries", "text": "RJSC, the national registry for every company and firm, plus Union Parishad trade licences and inland container depot automation." },
+    { "name": "NGO / CSO Digitalisation", "tag": "Regulation", "text": "End-to-end digital regulation of NGOs and foreign-funded projects through the NGO Affairs Bureau's online platforms." },
+    { "name": "Disaster MIS", "tag": "Resilience", "text": "Upazila-level Disaster Management Information Centres, IVR early warning, e-learning and e-libraries under CDMP-II." }
   ],
 
-  "skillGroups": [
-    {
-      "title": "Governance & policy",
-      "items": ["DPI governance frameworks", "Governance maturity assessment", "Institutional and regulatory design", "Business process and forms simplification", "Legal and rules simplification support"]
-    },
-    {
-      "title": "Technology & security",
-      "items": ["Systems and solution architecture", "Technical oversight of vendors", "ISO/IEC 27001 information security", "User acceptance testing and QA", "Role-based dashboards and MIS"]
-    },
-    {
-      "title": "Programme delivery",
-      "items": ["Project and programme management", "Procurement and technical evaluation", "Stakeholder and inter-ministerial coordination", "Results-based monitoring and reporting", "Training design and capacity building"]
-    }
+  "expertise": [
+    { "title": "E-Governance & Digitalisation", "text": "Digital public infrastructure, G2G/G2B/G2C e-service design, Smart Services delivery, SDG-aligned dashboards, mobile data collection, ICT4D and national-scale paperless transformation.", "tags": ["NGOAB", "RJSC", "DGHS", "BDRIS", "CDMP"] },
+    { "title": "Digital Public Infrastructure", "text": "National business registry DPI, NGO e-service platform, citizen-facing portals, compliance tracking systems, interoperability standards and open digital infrastructure principles.", "tags": ["Registries", "Interoperability", "Portals"] },
+    { "title": "Business Process Reform", "text": "BPMN 2.0 process mapping, as-is/to-be analysis, regulatory workflow redesign and procurement-ready solution specifications.", "tags": ["BPMN 2.0", "BPR", "Specifications"] },
+    { "title": "Data Governance & Management", "text": "ISO 27001-aligned frameworks, data classification, ownership/stewardship/custodian roles, RACI, data quality dimensions, validation rules, audit trails, access controls, privacy-by-design and DPIA-equivalent assessments.", "tags": ["ISO 27001", "Privacy by design", "Data quality"] },
+    { "title": "Policy Analysis & Development", "text": "Evidence-based policy analysis, gap assessments, ICT policy design, policy briefs, concept notes, MoUs, TOR preparation, GoB ICT compliance and gender-responsive digital policy.", "tags": ["Policy briefs", "Gap analysis", "TORs"] },
+    { "title": "Change Management", "text": "Structured change frameworks, reform institutionalisation, resistance management, digital adoption support, results-based monitoring and lessons-learned capture across ministries, regulators and NGO bodies.", "tags": ["Adoption", "RBM", "Stakeholders"] },
+    { "title": "Capacity Building & Training", "text": "ICT and data governance training design and delivery, e-learning platforms, workshops for government officials, journey-mapping facilitation, SOPs and training materials.", "tags": ["Training", "SOPs", "E-learning"] }
   ],
 
   "competencies": [
-    "DPI governance frameworks and maturity assessment",
-    "Systems architecture and technical oversight",
-    "Information security management (ISO/IEC 27001)",
-    "Procurement evaluation and vendor management",
-    "Business process and forms simplification",
-    "User acceptance testing and quality assurance",
-    "Stakeholder and inter-ministerial coordination",
-    "Capacity building and field-level training"
+    "Digital public infrastructure (DPI) design",
+    "Business process re-engineering (BPMN 2.0)",
+    "Data governance & data management (ISO 27001)",
+    "Policy analysis & development",
+    "Change management & digital adoption",
+    "Systems acquisition, vendor management & UAT",
+    "Stakeholder engagement across GoB agencies",
+    "Capacity building & training"
   ],
 
   "experience": [
     {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "ISPAT – Institutional Strengthening for Promoting Accountability and Transparency",
       "role": "National Consultant – Technical Project Implementation Expert",
-      "org": "UNDP Bangladesh, ISPAT Project · embedded at the NGO Affairs Bureau, Prime Minister's Office",
-      "period": "Current",
-      "points": [
-        "Technical implementation of the NGOAB Online Solution, the national platform for NGO registration, project approval and oversight, with role-based dashboards for NGOAB officials, district and upazila administrations, and NGOs.",
-        "Managed the transition between development vendors, including source code and documentation handover and completion of the FD-6 / FD-7 modules.",
-        "Carried out the technical evaluation for selection of the platform's development vendor.",
-        "Prepared the ISO/IEC 27001 Statement of Applicability for the platform.",
-        "Designed consultation workshops on forms simplification and UAT, NGOAB Act and Rules simplification, audit firm engagement and inter-ministerial coordination.",
-        "Supported the Project Steering Committee and delivered a DG-level system demonstration; prepared project progress reports.",
-        "Designed district and divisional user training: ten batches across eight districts."
+      "period": "Mar 2026 – Present",
+      "current": true,
+      "groups": [
+        { "title": "E-Governance & DPI", "items": [
+          "Advanced NGOAB's digital transformation agenda by embedding digital solutions within institutional reform and service delivery modernisation, enabling the transition from analogue to citizen-centric e-services aligned with GoB ICT policy.",
+          "Analysed and optimised business processes and service workflows, applying as-is/to-be methodology across NGOAB's four integrated online platforms to design inclusive, user-centric digital systems."
+        ]},
+        { "title": "Data Governance & Management", "items": [
+          "Oversee data quality, validation and governance compliance across all NGOAB digital systems, applying ISO 27001-based frameworks covering data classification, access controls, audit trails and error-correction processes.",
+          "Strengthen results-based monitoring and knowledge management, tracking performance, capturing lessons learned and packaging programme insights into decision-ready reports for UNDP and GoB stakeholders."
+        ]},
+        { "title": "Policy & Change Management", "items": [
+          "Planned and delivered ISPAT project activities in line with the Annual Work Plan, UNDP policies and national digital development priorities, driving timely, measurable results.",
+          "Drove structured change management and multi-stakeholder engagement with ministries, regulators and NGO bodies to institutionalise digital reforms sustainably across NGOAB."
+        ]}
       ]
     },
     {
-      "role": "Founder",
-      "org": "Synapse Consulting · development & management consulting",
-      "period": "Current",
-      "points": [
-        "Digital transformation advisory, programme management, information security and capacity building for development partners and public institutions, delivered in consortium with specialist partners."
+      "org": "Synapse Consulting",
+      "project": "Development and management consulting practice — “Think. Connect. Transform.”",
+      "role": "CEO, Proprietor and Lead Consultant",
+      "period": "Jan 2026 – Present",
+      "current": true,
+      "groups": [
+        { "title": "Practice leadership & consulting delivery", "items": [
+          "Set the strategic direction and run the practice, including business development, proposal preparation, client relationships, contracting, quality assurance and financial management.",
+          "Lead Consultant on advisory assignments in e-governance, data governance, ICT policy, information security and digital transformation for development partners, NGOs and public institutions.",
+          "Manage engagements end to end, from inception and stakeholder consultation to analysis, drafting, validation and capacity building, applying ISO 27001, PMP and results-based management practices."
+        ]}
       ]
     },
     {
-      "role": "E-governance & DPI programmes",
-      "org": "UNDP · USAID · British Council, Bangladesh",
-      "period": "18+ years",
-      "points": [
-        "Delivery of donor-funded e-governance and digital public infrastructure programmes with government counterparts in Bangladesh."
+      "org": "British Council Bangladesh",
+      "project": "Effective Governance: Accelerating E-Government and Digital Public Services",
+      "role": "Local E-Governance Consultant (Short-Term)",
+      "period": "Sep 2025 – Mar 2026",
+      "groups": [
+        { "title": "Policy Analysis & Business Process Reform", "items": [
+          "Conducted as-is/to-be process mapping and gap assessments for DGHS and BDRIS, producing agency-specific analytical briefs on data reporting gaps, accessibility barriers, compliance weaknesses and evidence-based interventions.",
+          "Prepared TA input documents and policy briefs for international consultants, mapping GoB digital service gaps against global standards and translating findings into actionable upstream reform proposals.",
+          "Delivered post-engagement documentation, including findings summaries, recommendations and briefing notes for government counterparts and development partners."
+        ]},
+        { "title": "Capacity Building & Training", "items": [
+          "Co-designed and facilitated policy and journey-mapping workshops, building government officials' capacity in evidence-based digital service reform.",
+          "Developed and localised SOPs, training materials and reference guides consistent with government protocols, supporting sustained improvements in data management and service delivery."
+        ]}
+      ]
+    },
+    {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "ISPAT – Institutional Strengthening for Promoting Accountability and Transparency",
+      "role": "National Consultant – IT Expert",
+      "period": "Apr 2025 – Feb 2026",
+      "groups": [
+        { "title": "DPI Design & Digitalisation", "items": [
+          "Project-managed end-to-end DPI development for NGOAB: an online NGO registration portal, compliance tracking system, SDG-aligned reporting dashboard and citizen-facing e-services, transforming paper-based workflows into integrated digital infrastructure.",
+          "Managed the full software development lifecycle, from requirements elicitation and solution architecture through vendor management, UAT, deployment and post-deployment stabilisation, in line with GoB ICT standards."
+        ]},
+        { "title": "Data Governance & Management", "items": [
+          "Designed and implemented ISO 27001-based data governance frameworks for NGOAB, covering data classification, ownership/stewardship/custodian roles, validation rules, access controls, audit trails and data lifecycle policies.",
+          "Oversaw database reform and digitisation, improving data integrity, accessibility and visualisation through SDG-aligned dashboards and analytics.",
+          "Applied privacy-by-design across all four NGOAB systems, embedding data minimisation, pseudonymisation, access tiers and audit trails from inception."
+        ]},
+        { "title": "Policy Analysis & Development", "items": [
+          "Developed policy briefs, concept notes and MoUs, and supported high-level dialogue on gender-responsive and inclusive digital services for UNDP and GoB leadership.",
+          "Conducted policy research and knowledge generation, producing technical briefs, compliance assessments and communication materials for GoB stakeholders and UNDP programme management."
+        ]}
+      ]
+    },
+    {
+      "org": "International Development Group (IDG) LLC",
+      "project": "USAID Feed the Future Bangladesh Trade Activity",
+      "role": "Business Transformation and Digitalization Specialist",
+      "period": "Aug 2024 – Mar 2025",
+      "groups": [
+        { "title": "DPI & Business Process Reform", "items": [
+          "Led DPI-level digital transformation of RJSC, Bangladesh's national business registry serving every registered company and firm, digitalising the full registration lifecycle (incorporation, annual filings, director changes, dissolution) through BPR using BPMN 2.0.",
+          "Prepared a full technical documentation suite for inland container depot (ICD) automation: BRDs, functional and technical specifications, architecture diagrams, data flow models and UAT plans.",
+          "Engineered cost-saving digital solutions for RJSC, delivering measurable time and cost savings and stronger compliance with GoB IT governance standards."
+        ]},
+        { "title": "Data Governance & Privacy by Design", "items": [
+          "Applied privacy-by-design across RJSC's architecture, with data classification, role-based access, sensitivity tiers and audit trails for director NID numbers, shareholder identities, ownership structures and financial filings.",
+          "Conducted DPIA-equivalent assessments for RJSC and ICD systems, defining data minimisation requirements and access control tiers."
+        ]},
+        { "title": "Change Management & Training", "items": [
+          "Translated strategic goals into technology solutions, driving process improvement through change management and stakeholder training across implementing agencies."
+        ]}
+      ]
+    },
+    {
+      "org": "International Development Group (IDG) LLC",
+      "project": "USAID Feed the Future Bangladesh Trade Activity",
+      "role": "ICT Specialist",
+      "period": "Sep 2020 – Jul 2024",
+      "groups": [
+        { "title": "BPR & E-Governance", "items": [
+          "Conducted business process analysis with BPMN 2.0 to identify optimisation opportunities across government e-governance workflows for RJSC and Union Parishads.",
+          "Designed and implemented new business process models for GoB services, including a bilingual trade licence solution for Union Parishads.",
+          "Managed procurement and transition planning for new digital service delivery systems, overseeing testing and stabilisation."
+        ]},
+        { "title": "Data Management & Reporting", "items": [
+          "Designed data flow models and interoperability specifications for government MIS, defining data readiness requirements and validation frameworks.",
+          "Authored project reports and technical documentation for USAID, IDG and GoB partners."
+        ]}
+      ]
+    },
+    {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "National Urban Poverty Reduction Programme (NUPRP)",
+      "role": "ICT Expert (Jul 2017 – Aug 2020); National Consultant – ICT Expert (Jan – May 2017)",
+      "period": "Jan 2017 – Aug 2020",
+      "groups": [
+        { "title": "Digitalisation & Data Management", "items": [
+          "Led ICT infrastructure deployment and standardisation across 20+ regional offices, with IT governance frameworks aligned to UNDP standards.",
+          "Designed and implemented digital microfinance systems supporting financial inclusion, with strong data accuracy, oversight and audit integrity.",
+          "Developed mobile survey and monitoring applications for evidence-based programme decision-making."
+        ]}
+      ]
+    },
+    {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "Comprehensive Disaster Management Programme (CDMP-II)",
+      "role": "IT / DMIC Associate",
+      "period": "Jul 2014 – Dec 2015",
+      "groups": [
+        { "title": "", "items": [
+          "Developed and launched Disaster Management Information Centres (DMICs), e-learning portals and e-libraries.",
+          "Coordinated with ministries to implement ICT infrastructure meeting national performance standards; managed IT procurement in line with GoB rules.",
+          "Received formal recognition from UNDP and GoB for IVR implementation, upazila-level DMICs, the e-library and IT-based vendor management."
+        ]}
+      ]
+    },
+    {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "CDMP-II; Country Office ICT unit; Promoting Access to Justice and Human Rights Project",
+      "role": "IT Assistant; ICT Assistant (Country Office, Sep – Nov 2010)",
+      "period": "Apr 2009 – Nov 2013",
+      "groups": [
+        { "title": "", "items": [
+          "Delivered ICT infrastructure, network administration and data centre operations for CDMP-II, including ICT planning, IT training and knowledge products for government partners.",
+          "Redesigned and relocated the UNDP Country Office data centre; restructured the ICT help desk and stores; coordinated an office-wide OS and MS Office migration.",
+          "Managed IT procurement end to end: RFPs/RFQs, equipment planning and vendor contracts.",
+          "For the Access to Justice project, built and maintained the project website, supported ICT policy guidance to the Law Ministry and served as Deputy Security Focal Point."
+        ]}
+      ]
+    },
+    {
+      "org": "Daffodil Computers Limited (assigned to UNDP Bangladesh)",
+      "project": "",
+      "role": "IT Engineer",
+      "period": "Nov 2007 – Mar 2009",
+      "groups": [
+        { "title": "", "items": [
+          "Maintained a network of 250+ PCs and servers across 15 floors of the IDB building as part of a five-person IT team.",
+          "Prepared network deployment documentation, including the Master Implementation Network Plan, system requirement specifications and detailed design documents.",
+          "Prepared technical specifications and evaluated vendor quotes for hardware and software procurement; supported ICT budgeting and policy updates."
+        ]}
+      ]
+    },
+    {
+      "org": "United Nations Development Programme (UNDP) Bangladesh",
+      "project": "",
+      "role": "IT Intern",
+      "period": "Jan 2007 – Oct 2007",
+      "groups": [
+        { "title": "", "items": ["Provided ICT support to end users across the UNDP Bangladesh country office."] }
+      ]
+    },
+    {
+      "org": "Luminary ICT",
+      "project": "",
+      "role": "Programmer",
+      "period": "Feb 2005 – Dec 2006",
+      "groups": [
+        { "title": "", "items": ["Designed and developed websites and business applications, including POS, school management and hospital management systems."] }
       ]
     }
   ],
 
+  "additional": [
+    {
+      "role": "Trainer – Entrepreneurship Development & Financial Literacy",
+      "org": "BRAC Prottasha-II Project",
+      "period": "2026 – Present",
+      "text": "Deliver entrepreneurship development and financial literacy training for returnee migrants, building business planning and financial management skills for sustainable livelihoods."
+    },
+    {
+      "role": "Mentor",
+      "org": "PMI Bangladesh Chapter Mentoring Program",
+      "period": "2026",
+      "text": "Mentor to an early-career project manager in the chapter's structured mentoring programme."
+    }
+  ],
+
   "caseStudy": {
-    "name": "NGOAB Online Solution",
+    "name": "NGOAB Online Solutions",
     "client": "NGO Affairs Bureau, Prime Minister's Office",
     "funder": "UNDP Bangladesh · ISPAT Project",
-    "role": "National Consultant – Technical Project Implementation Expert",
-    "challenge": "Every NGO and foreign-funded project in Bangladesh is registered, approved and monitored by the NGO Affairs Bureau. The work involved paper forms, multiple offices and field-level verification by district and upazila administrations.",
-    "solution": "A national online platform for NGO registration, project approval and oversight under the Institutional Strengthening for Promoting Accelerated Transformation (ISPAT) Project, with role-based dashboards scoped to each user's role and jurisdiction.",
-    "users": ["NGOAB officials, up to the Director General", "Deputy Commissioners and UNOs in the field", "NGOs and their project teams"],
+    "role": "National Consultant – IT Expert, then Technical Project Implementation Expert (Apr 2025 – present)",
+    "challenge": "Every NGO and foreign-funded project in Bangladesh is registered, approved and monitored by the NGO Affairs Bureau. The work relied on paper-based workflows across multiple offices, with field-level verification by district and upazila administrations.",
+    "solution": "Four integrated online platforms — an NGO registration portal, a compliance tracking system, an SDG-aligned reporting dashboard and citizen-facing e-services — under an ISO 27001-based data governance framework, with role-based dashboards scoped to each user's role and jurisdiction.",
+    "users": ["NGOAB officials, up to the Director General", "Deputy Commissioners and UNOs in the field", "NGOs and their project teams", "Citizens using public e-services"],
     "contributions": [
+      { "title": "Software lifecycle", "text": "Requirements, solution architecture, vendor management, UAT, deployment and post-deployment stabilisation to GoB ICT standards." },
+      { "title": "Data governance", "text": "ISO 27001-based framework: classification, stewardship roles, validation rules, access controls, audit trails and lifecycle policies." },
+      { "title": "Privacy by design", "text": "Data minimisation, pseudonymisation and tiered access built into all four systems from inception." },
       { "title": "Vendor transition", "text": "Handover between development vendors, including source code, documentation and completion of the FD-6 / FD-7 modules." },
-      { "title": "Procurement", "text": "Technical evaluation for the selection of the platform's development vendor." },
-      { "title": "Information security", "text": "ISO/IEC 27001 Statement of Applicability for the platform." },
-      { "title": "Process & policy", "text": "Workshops on forms simplification and UAT, simplification of the NGOAB Act and Rules, and consultation with audit firms." },
-      { "title": "Coordination", "text": "Inter-ministerial coordination, Project Steering Committee support and a DG-level system demonstration." },
-      { "title": "Roll-out", "text": "Training design for district and divisional users: ten batches across eight districts." }
+      { "title": "Policy & coordination", "text": "Policy briefs, concept notes and MoUs; workshops on forms simplification, UAT and NGOAB Act and Rules simplification; inter-ministerial coordination." },
+      { "title": "Roll-out & training", "text": "Hands-on staff training and district and divisional user training: ten batches across eight districts." }
     ]
   },
 
-  "approach": [
-    { "title": "Assess", "text": "Map the institutions, laws, processes and systems already in place, and where governance gaps sit." },
-    { "title": "Design", "text": "Agree architecture, standards, security controls and simplified processes with the people who will own them." },
-    { "title": "Implement", "text": "Oversee vendors, testing and data migration so the system meets requirements and goes live safely." },
-    { "title": "Institutionalise", "text": "Train users, set up governance and reporting, and hand over so the system keeps working after the project." }
+  "projects": [
+    {
+      "name": "RJSC DPI Transformation – National Business Registry",
+      "funder": "USAID / IDG",
+      "period": "2020 – 2025",
+      "text": "DPI-level BPR and digitalisation of RJSC, Bangladesh's foundational business registry serving every registered company. Re-engineered multi-type registration workflows using BPMN 2.0, achieving paperless operations, measurable cost and time savings, and stronger data governance for sensitive corporate, financial and legal records."
+    },
+    {
+      "name": "CDMP-II Emergency MIS – DMIC Centres & IVR System",
+      "funder": "UNDP / Ministry of Disaster Management and Relief",
+      "period": "2010 – 2015",
+      "text": "Disaster Management Information Centres at upazila level across Bangladesh with IVR early-warning telephony and a national e-learning portal. Recognised by UNDP and GoB for contribution to emergency MIS delivery and institutional data management capacity."
+    },
+    {
+      "name": "ICD Automation – Container Management Digitalisation",
+      "funder": "USAID / IDG",
+      "period": "2024 – 2025",
+      "text": "Procurement-ready technical documentation for digitalising container management at an inland container depot: BRDs, functional and technical specifications, architecture diagrams, data flow models, UAT plans and a data protection impact assessment."
+    }
   ],
 
-  "partners": ["UNDP", "USAID", "British Council"],
+  "approach": [
+    { "title": "Assess", "text": "As-is analysis, gap assessment and policy research to understand institutions, laws, processes and data." },
+    { "title": "Design", "text": "To-be processes in BPMN 2.0, architecture, data governance and security controls, agreed with the owners." },
+    { "title": "Implement", "text": "Procurement, vendor management, UAT and deployment so the system meets requirements and goes live safely." },
+    { "title": "Institutionalise", "text": "Training, SOPs, change management and results-based monitoring so reforms last after the project." }
+  ],
+
+  "partners": ["UNDP", "USAID", "British Council", "Government of Bangladesh"],
 
   "firm": {
     "name": "Synapse Consulting",
     "kind": "Development & management consulting",
     "tagline": "Think. Connect. Transform.",
-    "text": "I founded Synapse Consulting to bring the rigour of government programme delivery to development partners, NGOs and public institutions. We work in consortium with specialist partners on development consultancy assignments.",
+    "text": "I founded Synapse Consulting in January 2026 to bring the rigour of government programme delivery to development partners, NGOs and public institutions. As CEO and Lead Consultant, I manage assignments end to end, and we work in consortium with specialist partners on development consultancy.",
     "services": [
-      { "title": "Digital transformation advisory", "text": "Strategy, architecture and governance for public-sector systems." },
-      { "title": "Project and programme management", "text": "Results-based planning, monitoring and delivery for donor-funded work." },
-      { "title": "Information security and compliance", "text": "ISO/IEC 27001 readiness, statements of applicability and audits." },
-      { "title": "Capacity building", "text": "Training design and delivery for government and NGO staff." }
+      { "title": "E-governance & digital transformation", "text": "Strategy, DPI design, architecture and governance for public-sector systems." },
+      { "title": "Data governance & information security", "text": "ISO 27001-aligned frameworks, statements of applicability, privacy-by-design and audits." },
+      { "title": "Policy & process reform", "text": "Gap assessments, BPMN 2.0 process redesign, policy briefs, concept notes and TORs." },
+      { "title": "Programme management & capacity building", "text": "Results-based delivery, training design, SOPs and change management." }
     ]
   },
 
@@ -157,29 +341,41 @@
   ],
 
   "education": [
-    { "title": "M.Sc. Computer Science & Engineering", "detail": "East West University" },
-    { "title": "B.Sc. Computer Science & Engineering", "detail": "East West University" },
-    { "title": "Executive MBA", "detail": "" },
-    { "title": "PG Diploma, Data Science & Business Analytics", "detail": "EduPro UK · 2026" }
+    { "title": "Postgraduate Diploma in Data Science & Business Analytics (PGDDSBA)", "detail": "EduPro, UK · 2026" },
+    { "title": "Executive MBA, Marketing", "detail": "Presidency University, Bangladesh · 2025" },
+    { "title": "M.Sc. in Computer Science and Engineering", "detail": "East West University, Bangladesh · 2012" },
+    { "title": "B.Sc. in Computer Science and Engineering", "detail": "East West University, Bangladesh · 2007" }
   ],
 
   "certifications": [
-    { "title": "Project Management Professional (PMP)", "short": "PMP", "detail": "PMI" },
-    { "title": "PRINCE2", "short": "PRINCE2", "detail": "" },
-    { "title": "ITIL", "short": "ITIL", "detail": "" },
-    { "title": "ISO/IEC 27001 Lead Auditor", "short": "ISO 27001 LA", "detail": "TÜV SÜD" },
-    { "title": "Six Sigma Black Belt", "short": "Six Sigma BB", "detail": "" },
-    { "title": "Program DPro", "short": "Program DPro", "detail": "PM4NGOs" },
-    { "title": "Results-Based Project Management", "short": "RBPM", "detail": "PM4DEV · 2026" }
+    { "title": "ISO/IEC 27001:2022 Lead Auditor", "short": "ISO 27001 LA", "detail": "TÜV SÜD · 2025" },
+    { "title": "Project Management Professional", "short": "PMP", "detail": "PMI · 2024" },
+    { "title": "Leadership in Project Management", "short": "LPM", "detail": "PM4DEV · 2026" },
+    { "title": "Organizational Project Management", "short": "OPM", "detail": "PM4DEV · 2026" },
+    { "title": "Results-Based Project Management", "short": "RBPM", "detail": "PM4DEV · 2026" },
+    { "title": "Program Management for Development Professionals – Foundation", "short": "Program DPro", "detail": "PM4NGOs" },
+    { "title": "DMAIC Six Sigma Black Belt", "short": "Six Sigma BB", "detail": "IQF · 2016" },
+    { "title": "PRINCE2 Foundation", "short": "PRINCE2", "detail": "APMG International · 2013" },
+    { "title": "ITIL Foundation V3", "short": "ITIL", "detail": "TÜV SÜD · 2012" },
+    { "title": "Cloud Computing Foundation Certificate", "short": "Cloud", "detail": "EXIN · 2012" }
   ],
 
-  "community": [
-    { "title": "Mentor, PMI Bangladesh Chapter Mentoring Program", "detail": "2026" },
-    { "title": "Trainer, entrepreneurship & financial literacy (DevCon, Prottasha-II)", "detail": "2026" }
+  "memberships": [
+    "ISACA – Information Systems Audit and Control Association",
+    "PMI – Project Management Institute",
+    "IIBA – International Institute of Business Analysis (Individual Member)",
+    "BCS, The Chartered Institute for IT (Professional Member)",
+    "Bangladesh Computer Society (Lifetime Member)",
+    "Internet Society"
+  ],
+
+  "languages": [
+    { "title": "Bengali", "detail": "Native" },
+    { "title": "English", "detail": "Professional — spoken and written" }
   ],
 
   "contact": {
     "heading": "Planning a DPI or e‑governance programme?",
-    "text": "I take on international remote consulting assignments with UN agencies, international NGOs and donor-funded programmes: governance frameworks, technical implementation, information security and assessments."
+    "text": "I take on international remote consulting assignments with UN agencies, international NGOs and donor-funded programmes: DPI design, business process reform, data governance, policy analysis and change management."
   }
 }

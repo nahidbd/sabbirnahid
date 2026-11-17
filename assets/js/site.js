@@ -25,7 +25,7 @@
       return '<li' + (opt ? ' class="opt"' : '') + '><a href="' + h + href + '">' + label + '</a></li>';
     };
     return '<div class="wrap">' +
-      '<a class="mark" href="/"><b>' + esc(p.initials) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.headline) + '</small></span></a>' +
+      '<a class="mark" href="/"><b>' + esc(p.initials) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.shortHeadline || p.headline) + '</small></span></a>' +
       '<nav aria-label="Sections"><ul>' +
         item("#about", "About", true) + item("#expertise", "Expertise", true) + item("#experience", "Experience", true) +
         item("#case", "Work", true) + item("#credentials", "Credentials", true) + item("#contact", "Contact", false) +
@@ -70,19 +70,29 @@
       '<div class="stem"><strong>' + esc(d.specialism.title) + '</strong><ol style="list-style:none;margin:0;padding:0">' +
         map(d.specialism.layers, function (l) { return '<li>' + esc(l) + '</li>'; }) + '</ol></div>');
 
-    set("skills", map(d.skillGroups, function (g, i) {
-      return '<div class="card skill"><h3><span>' + pad(i + 1) + '</span>' + esc(g.title) + '</h3><ul>' +
-        map(g.items, function (x) { return '<li>' + esc(x) + '</li>'; }) + '</ul></div>';
+    set("expertise-grid", map(d.expertise, function (x, i) {
+      return '<div class="card xcard"><h3><span>' + pad(i + 1) + '</span>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p>' +
+        (x.tags && x.tags.length ? '<div class="tags">' + map(x.tags, function (t) { return '<span class="chip">' + esc(t) + '</span>'; }) + '</div>' : '') +
+        '</div>';
     }));
     set("sectors", map(d.sectors, function (s) {
       return '<div class="card sector"><span class="chip">' + esc(s.tag) + '</span><h4>' + esc(s.name) + '</h4><p>' + esc(s.text) + '</p></div>';
     }));
 
-    set("timeline", map(d.experience, function (e) {
-      var now = /current|present/i.test(e.period);
-      return '<div class="job' + (now ? ' now' : '') + '"><div class="card"><header><h3>' + esc(e.role) + '</h3>' +
-        '<span class="chip">' + esc(e.period) + '</span></header><p class="org">' + esc(e.org) + '</p>' +
-        (e.points && e.points.length ? '<ul>' + map(e.points, function (x) { return '<li>' + esc(x) + '</li>'; }) + '</ul>' : '') +
+    var groupsHtml = function (groups) {
+      return map(groups, function (g) {
+        return '<div class="grp">' + (g.title ? '<h4>' + esc(g.title) + '</h4>' : '') +
+          '<ul>' + map(g.items, function (x) { return '<li>' + esc(x) + '</li>'; }) + '</ul></div>';
+      });
+    };
+    set("timeline", map(d.experience, function (e, i) {
+      var n = (e.groups || []).reduce(function (t, g) { return t + (g.items || []).length; }, 0);
+      var body = groupsHtml(e.groups);
+      var open = i < 2 || n <= 1;
+      return '<div class="job' + (e.current ? ' now' : '') + '"><div class="card"><header><h3>' + esc(e.role) + '</h3>' +
+        '<span class="chip">' + esc(e.period) + '</span></header>' +
+        '<p class="org">' + esc(e.org) + '</p>' + (e.project ? '<p class="proj">' + esc(e.project) + '</p>' : '') +
+        (n ? (open ? body : '<details><summary><span class="more">Show responsibilities (' + n + ')</span><span class="less">Hide responsibilities</span></summary>' + body + '</details>') : '') +
         '</div></div>';
     }));
     set("partners", '<span class="mono">Programmes funded by</span>' +
@@ -100,6 +110,10 @@
       '<div class="contrib">' + map(c.contributions, function (x) {
         return '<div><b>' + esc(x.title) + '</b><span>' + esc(x.text) + '</span></div>';
       }) + '</div></div>');
+
+    set("projects", map(d.projects, function (x) {
+      return '<article class="card pcard"><h3>' + esc(x.name) + '</h3><p class="meta">' + esc(x.funder) + ' · ' + esc(x.period) + '</p><p>' + esc(x.text) + '</p></article>';
+    }));
 
     set("steps", map(d.approach, function (s) { return '<div class="step"><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }));
 
@@ -119,7 +133,11 @@
       return map(items, function (x) { return '<li><b>' + esc(x.title) + '</b>' + (x.detail ? '<span>' + esc(x.detail) + '</span>' : '') + '</li>'; });
     };
     set("education", edu(d.education));
-    set("community", edu(d.community));
+    set("languages", edu(d.languages));
+    set("memberships", map(d.memberships, function (m) { return '<li>' + esc(m) + '</li>'; }));
+    set("additional", map(d.additional, function (x) {
+      return '<li><b>' + esc(x.role) + '</b><span>' + esc(x.org) + ' · ' + esc(x.period) + '</span>' + (x.text ? '<p>' + esc(x.text) + '</p>' : '') + '</li>';
+    }));
     set("badges", map(d.certifications, function (c) {
       return '<div class="badge"><b>' + esc(c.short || c.title) + '</b>' + (c.short && c.short !== c.title ? '<span>' + esc(c.title) + '</span>' : '') +
         (c.detail ? '<small>' + esc(c.detail) + '</small>' : '') + '</div>';
@@ -131,6 +149,7 @@
       '<dl>' +
         '<div><dt>Email</dt><dd><a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a></dd></div>' +
         '<div><dt>LinkedIn</dt><dd><a href="' + esc(p.linkedin) + '" rel="noopener">' + esc(shortUrl(p.linkedin)) + '</a></dd></div>' +
+        (p.phone ? '<div><dt>Phone</dt><dd><a href="tel:' + esc(p.phone.replace(/\s/g, '')) + '">' + esc(p.phone) + '</a></dd></div>' : '') +
         '<div><dt>Location</dt><dd>' + esc(p.location) + ' (' + esc(p.timezone) + ')</dd></div>' +
         '<div><dt>Availability</dt><dd>' + esc(p.availability) + '</dd></div>' +
       '</dl></div>');
@@ -144,23 +163,40 @@
       }) + '</ul>';
     };
     document.title = p.name + " — CV";
-    set("cv-doc", '<div class="cv-top"><div><h1>' + esc(p.name) + '</h1><p class="sub">' + esc(p.title) + '</p></div>' +
-        '<address>' + esc(p.location) + ' (' + esc(p.timezone) + ')<br><a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a><br>' +
+    set("cv-doc", '<div class="cv-top"><div><h1>' + esc(p.name) + '</h1><p class="sub">' + esc(p.title) + '</p>' +
+        '<p style="font-size:13.5px;color:var(--muted);margin-top:6px">' + esc(p.headline) + '</p></div>' +
+        '<address>' + esc(p.location) + '<br>' + (p.phone ? esc(p.phone) + '<br>' : '') +
+        '<a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a><br>' +
         '<a href="' + esc(p.linkedin) + '">' + esc(shortUrl(p.linkedin)) + '</a></address></div>' +
-      '<h2>Profile</h2><p>' + esc(d.cvProfile) + '</p>' +
-      '<h2>Core competencies</h2><ul class="two">' + map(d.competencies, function (c) { return '<li>' + esc(c) + '</li>'; }) + '</ul>' +
+      '<h2>Professional profile</h2><p>' + esc(d.cvProfile) + '</p>' +
+      '<h2>Thematic expertise</h2><dl class="x">' + map(d.expertise, function (x) {
+        return '<dt>' + esc(x.title) + '</dt><dd>' + esc(x.text) + '</dd>';
+      }) + '</dl>' +
       '<h2>Professional experience</h2>' + map(d.experience, function (e) {
-        return '<div class="item"><b>' + esc(e.role) + '</b><span class="when">' + esc(e.period) + '</span>' +
-          '<span class="org">' + esc(e.org) + '</span>' +
-          (e.points && e.points.length ? '<ul class="bul">' + map(e.points, function (x) { return '<li>' + esc(x) + '</li>'; }) + '</ul>' : '') +
-          '</div>';
+        return '<div class="item"><b>' + esc(e.org) + '</b><span class="when">' + esc(e.period) + '</span>' +
+          (e.project ? '<span class="proj">' + esc(e.project) + '</span>' : '') +
+          '<span class="org"><i>' + esc(e.role) + '</i></span>' +
+          map(e.groups, function (g) {
+            return (g.title ? '<h5>' + esc(g.title) + '</h5>' : '') +
+              '<ul class="bul">' + map(g.items, function (x) { return '<li>' + esc(x) + '</li>'; }) + '</ul>';
+          }) + '</div>';
       }) +
+      '<h2>Additional activities</h2>' + map(d.additional, function (x) {
+        return '<div class="item"><b>' + esc(x.role) + '</b><span class="when">' + esc(x.period) + '</span><span class="org">' + esc(x.org) + '</span>' +
+          (x.text ? '<ul class="bul"><li>' + esc(x.text) + '</li></ul>' : '') + '</div>';
+      }) +
+      '<h2>Selected project deliverables</h2><dl class="x">' +
+        '<dt>' + esc(d.caseStudy.name) + ' (' + esc(d.caseStudy.funder) + ')</dt><dd>' + esc(d.caseStudy.solution) + '</dd>' +
+        map(d.projects, function (x) { return '<dt>' + esc(x.name) + ' (' + esc(x.funder) + ')</dt><dd>' + esc(x.text) + '</dd>'; }) +
+      '</dl>' +
       '<h2>Education</h2>' + two(d.education) +
       '<h2>Certifications</h2>' + two(d.certifications) +
+      '<h2>Professional memberships</h2><ul class="two">' + map(d.memberships, function (m) { return '<li>' + esc(m) + '</li>'; }) + '</ul>' +
+      '<h2>Languages</h2>' + two(d.languages) +
       '<h2>Research &amp; analysis</h2><ul class="bul">' + map(d.research, function (r) {
         return '<li><b>' + esc(r.title) + '.</b> ' + esc(r.text) + '</li>';
       }) + '</ul>' +
-      '<h2>Professional community</h2>' + two(d.community));
+      '<p style="margin-top:28px;font-size:14px;color:var(--muted)">References available upon request.</p>');
   }
 
   function start(d) {
