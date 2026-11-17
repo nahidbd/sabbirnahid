@@ -1,0 +1,148 @@
+{
+  "person": {
+    "name": "Sabbir Ahmed Nahid",
+    "initials": "SN",
+    "headline": "DPI Governance · E-Governance · Systems Architecture",
+    "location": "Dhaka, Bangladesh (GMT+6)",
+    "email": "sabbir.nahid@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sabbirahmednahid/",
+    "firm": "Synapse Consulting"
+  },
+
+  "cvProfile": "Digitalisation and systems architecture specialist with 18+ years delivering e-governance and digital public infrastructure (DPI) programmes in Bangladesh for UNDP, USAID and the British Council. T-shaped DPI governance specialist: DPI governance as the core discipline, applied to civil registration and vital statistics (CRVS), trade and business registries, NGO/CSO digitalisation and disaster management information systems. Founder of Synapse Consulting. Available for international remote consulting with UN agencies, international NGOs and donor-funded programmes.",
+
+  "hero": {
+    "eyebrow": "Digital Public Infrastructure · E-Governance · Systems Architecture",
+    "title": "Making digital public infrastructure",
+    "titleEmphasis": "work for the public.",
+    "lede": "I design, govern and implement the digital systems governments run on. For more than 18 years I have delivered e-governance and DPI programmes in Bangladesh for UNDP, USAID and the British Council, from regulatory platforms to registries and disaster information systems.",
+    "facts": [
+      { "title": "Based in Dhaka, Bangladesh", "text": "Available for international remote consulting" },
+      { "title": "Founder, Synapse Consulting", "text": "Development & management consulting" }
+    ]
+  },
+
+  "stats": [
+    { "value": "18+", "label": "years in e-governance and digital public infrastructure" },
+    { "value": "3", "label": "major development partners: UNDP, USAID, British Council" },
+    { "value": "7", "label": "professional certifications incl. PMP, PRINCE2, ISO 27001 LA" },
+    { "value": "8", "label": "districts covered by the NGOAB Online Solution training plan" }
+  ],
+
+  "specialism": {
+    "title": "DPI Governance",
+    "layers": ["Policy & institutional design", "Architecture & standards", "Information security", "Implementation & adoption"]
+  },
+
+  "sectors": [
+    { "name": "CRVS", "tag": "Civil registration", "text": "Civil registration and vital statistics: birth and death registration as the foundation of legal identity and public data." },
+    { "name": "Trade & Business Registry", "tag": "Registries", "text": "Registration and licensing platforms that reduce the cost of doing business and give government a reliable picture of the economy." },
+    { "name": "NGO / CSO Digitalisation", "tag": "Regulation", "text": "End-to-end digital regulation of NGOs and foreign-funded projects, from registration to fund release and reporting." },
+    { "name": "Disaster MIS", "tag": "Resilience", "text": "Information systems that help agencies plan, coordinate and account for disaster preparedness and response." }
+  ],
+
+  "competencies": [
+    "DPI governance frameworks and maturity assessment",
+    "Systems architecture and technical oversight",
+    "Information security management (ISO/IEC 27001)",
+    "Procurement evaluation and vendor management",
+    "Business process and forms simplification",
+    "User acceptance testing and quality assurance",
+    "Stakeholder and inter-ministerial coordination",
+    "Capacity building and field-level training"
+  ],
+
+  "featuredWork": {
+    "heading": "Digitalising NGO regulation in Bangladesh",
+    "intro": "Embedded with the government agency that regulates every NGO and foreign-funded project in the country.",
+    "sideLabel": "UNDP Bangladesh · ISPAT Project",
+    "summary": "Technical implementation of the NGOAB Online Solution, the national platform for NGO registration, project approval and oversight under the Institutional Strengthening for Promoting Accelerated Transformation (ISPAT) Project. Role-based dashboards serve NGOAB officials up to the Director General, district and upazila administrations (DCs and UNOs), and NGOs themselves, each scoped to its role and jurisdiction.",
+    "highlights": [
+      { "title": "Vendor transition", "text": "Managed handover between development vendors, including source code, documentation and completion of the FD-6 / FD-7 modules." },
+      { "title": "Procurement", "text": "Technical evaluation for the selection of the platform's development vendor." },
+      { "title": "Information security", "text": "ISO/IEC 27001 Statement of Applicability for the platform." },
+      { "title": "Process & policy", "text": "Workshops on forms simplification and UAT, simplification of the NGOAB Act and Rules, and consultation with audit firms." },
+      { "title": "Coordination", "text": "Inter-ministerial coordination, Project Steering Committee support and a DG-level system demonstration." },
+      { "title": "Roll-out", "text": "Training design for district and divisional users: ten batches across eight districts." }
+    ]
+  },
+
+  "partners": ["UNDP", "USAID", "British Council"],
+
+  "experience": [
+    {
+      "role": "National Consultant – Technical Project Implementation Expert",
+      "org": "UNDP Bangladesh, ISPAT Project · embedded at the NGO Affairs Bureau, Prime Minister's Office",
+      "period": "Current",
+      "points": [
+        "Technical implementation of the NGOAB Online Solution, the national platform for NGO registration, project approval and oversight, with role-based dashboards for NGOAB officials, district and upazila administrations, and NGOs.",
+        "Managed the transition between development vendors, including source code and documentation handover and completion of the FD-6 / FD-7 modules.",
+        "Carried out the technical evaluation for selection of the platform's development vendor.",
+        "Prepared the ISO/IEC 27001 Statement of Applicability for the platform.",
+        "Designed consultation workshops on forms simplification and UAT, NGOAB Act and Rules simplification, audit firm engagement and inter-ministerial coordination.",
+        "Supported the Project Steering Committee and delivered a DG-level system demonstration; prepared project progress reports.",
+        "Designed district and divisional user training: ten batches across eight districts."
+      ]
+    },
+    {
+      "role": "Founder",
+      "org": "Synapse Consulting · development & management consulting",
+      "period": "Current",
+      "points": [
+        "Digital transformation advisory, programme management, information security and capacity building for development partners and public institutions, delivered in consortium with specialist partners."
+      ]
+    },
+    {
+      "role": "E-governance & DPI programmes",
+      "org": "UNDP · USAID · British Council, Bangladesh",
+      "period": "18+ years",
+      "points": []
+    }
+  ],
+
+  "firm": {
+    "name": "Synapse Consulting",
+    "kind": "Development & management consulting",
+    "tagline": "Think. Connect. Transform.",
+    "text": "I founded Synapse Consulting to bring the same rigour I apply inside government programmes to development partners, NGOs and public institutions. We work in consortium with specialist partners on development consultancy assignments.",
+    "services": [
+      { "title": "Digital transformation advisory", "text": "Strategy, architecture and governance for public-sector systems." },
+      { "title": "Project and programme management", "text": "Results-based planning, monitoring and delivery for donor-funded work." },
+      { "title": "Information security and compliance", "text": "ISO/IEC 27001 readiness, statements of applicability and audits." },
+      { "title": "Capacity building", "text": "Training design and delivery for government and NGO staff." }
+    ]
+  },
+
+  "research": [
+    { "type": "Research proposal", "title": "DPI Governance Maturity Assessment", "text": "A framework for assessing the governance maturity of foundational DPI, using Bangladesh's National ID and Birth & Death Registration (BDRIS) systems as case studies, framed around the \"Foundation Paradox\".", "featured": true },
+    { "type": "Governance audit", "title": "Moral audit of the NGO Affairs Bureau", "text": "An MPA study of good governance, public integrity and human rights at NGOAB, examined through eight ethical frameworks." },
+    { "type": "Policy analysis", "title": "Budget FY2026–27 and poverty alleviation", "text": "A comprehensive analysis of Bangladesh's national budget allocations for poverty reduction." }
+  ],
+
+  "education": [
+    { "title": "M.Sc. Computer Science & Engineering", "detail": "East West University" },
+    { "title": "B.Sc. Computer Science & Engineering", "detail": "East West University" },
+    { "title": "Executive MBA", "detail": "" },
+    { "title": "PG Diploma, Data Science & Business Analytics", "detail": "EduPro UK · 2026" }
+  ],
+
+  "certifications": [
+    { "title": "Project Management Professional (PMP)", "detail": "PMI" },
+    { "title": "PRINCE2", "detail": "" },
+    { "title": "ITIL", "detail": "" },
+    { "title": "ISO/IEC 27001 Lead Auditor", "detail": "TÜV SÜD" },
+    { "title": "Six Sigma Black Belt", "detail": "" },
+    { "title": "Program DPro", "detail": "PM4NGOs" },
+    { "title": "Results-Based Project Management", "detail": "PM4DEV · 2026" }
+  ],
+
+  "community": [
+    { "title": "Mentor, PMI Bangladesh Chapter Mentoring Program", "detail": "2026" },
+    { "title": "Trainer, entrepreneurship & financial literacy (DevCon, Prottasha-II)", "detail": "2026" }
+  ],
+
+  "contact": {
+    "heading": "Planning a DPI or e-governance programme?",
+    "text": "I take on international remote consulting assignments with UN agencies, international NGOs and donor-funded programmes: governance frameworks, technical implementation, security and assessments."
+  }
+}
