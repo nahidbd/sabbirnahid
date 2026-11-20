@@ -245,6 +245,18 @@ section.alt .card{background:var(--paper)}
 .paper h3{font-size:19px}
 .paper p{font-size:15px;color:var(--muted)}
 
+/* Writing */
+.writing{display:grid;gap:12px;max-width:960px}
+.wpost{display:grid;grid-template-columns:96px 1fr auto;gap:20px;align-items:center;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.wpost:hover{border-color:var(--navy);transform:translateY(-2px)}
+.wpost time{display:grid;text-align:center;border-right:1px solid var(--rule);padding-right:18px;font-family:var(--mono);color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.wpost time b{font:600 30px/1 var(--display);color:var(--navy);letter-spacing:0}
+.wpost h3{font-size:19px;margin:6px 0 4px}
+.wpost .src{font-size:14px;color:var(--muted)}
+.wpost p.sum{font-size:14.5px;color:var(--text);margin-top:6px}
+.wpost .go{font-size:14px;font-weight:600;color:var(--navy);white-space:nowrap}
+@media (max-width:640px){.wpost{grid-template-columns:1fr}.wpost time{display:flex;gap:8px;align-items:baseline;border-right:0;padding:0;text-align:left}.wpost time b{font-size:20px}}
+
 /* Credentials */
 .creds{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(24px,4vw,48px)}
 @media (max-width:900px){.creds{grid-template-columns:1fr}}

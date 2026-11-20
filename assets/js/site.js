@@ -13,6 +13,11 @@
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
   var shortUrl = function (u) { return String(u || "").replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""); };
 
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var parts = function (iso) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || ""); return m ? { y: m[1], m: MONTHS[+m[2] - 1], d: +m[3] } : null; };
+  var longDate = function (iso) { var p = parts(iso); return p ? p.d + " " + p.m + " " + p.y : esc(iso); };
+  var byDate = function (arr) { return (arr || []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }); };
+
   var icon = {
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
     in: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>',
@@ -28,7 +33,7 @@
       '<a class="mark" href="/"><b>' + esc(p.initials) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.shortHeadline || p.headline) + '</small></span></a>' +
       '<nav aria-label="Sections"><ul>' +
         item("#about", "About", true) + item("#expertise", "Expertise", true) + item("#experience", "Experience", true) +
-        item("#case", "Work", true) + item("#credentials", "Credentials", true) + item("#contact", "Contact", false) +
+        item("#case", "Work", true) + item("#writing", "Writing", true) + item("#credentials", "Credentials", true) + item("#contact", "Contact", false) +
         '<li><a class="nav-cv" href="/cv"' + (page === "cv" ? ' aria-current="page"' : '') + '>CV</a></li>' +
       '</ul></nav></div>';
   }
@@ -129,6 +134,16 @@
         '</span><h3>' + esc(r.title) + '</h3><p>' + esc(r.text) + '</p></article>';
     }));
 
+    set("writing-list", byDate(d.writing).length ? map(byDate(d.writing), function (w) {
+      var dt = parts(w.date);
+      return '<a class="card wpost" href="' + esc(w.url) + '" rel="noopener">' +
+        '<time datetime="' + esc(w.date) + '">' + (dt ? '<b>' + dt.d + '</b>' + dt.m + ' ' + dt.y : esc(w.date)) + '</time>' +
+        '<div><span class="chip">' + esc(w.type || "Article") + '</span><h3>' + esc(w.title) + '</h3>' +
+        '<p class="src">' + esc(w.outlet) + (w.edition ? ' · ' + esc(w.edition) : '') + '</p>' +
+        (w.summary ? '<p class="sum">' + esc(w.summary) + '</p>' : '') + '</div>' +
+        '<span class="go">Read →</span></a>';
+    }) : '<p>Articles will appear here.</p>');
+
     var edu = function (items) {
       return map(items, function (x) { return '<li><b>' + esc(x.title) + '</b>' + (x.detail ? '<span>' + esc(x.detail) + '</span>' : '') + '</li>'; });
     };
@@ -193,6 +208,10 @@
       '<h2>Certifications</h2>' + two(d.certifications) +
       '<h2>Professional memberships</h2><ul class="two">' + map(d.memberships, function (m) { return '<li>' + esc(m) + '</li>'; }) + '</ul>' +
       '<h2>Languages</h2>' + two(d.languages) +
+      (d.writing && d.writing.length ? '<h2>Articles &amp; publications</h2><ul class="bul">' + map(byDate(d.writing), function (w) {
+        return '<li><b>' + esc(w.title) + '.</b> ' + esc(w.outlet) + (w.edition ? ', ' + esc(w.edition) : '') + ', ' + longDate(w.date) +
+          '. <a href="' + esc(w.url) + '">' + esc(shortUrl(w.url)) + '</a></li>';
+      }) + '</ul>' : '') +
       '<h2>Research &amp; analysis</h2><ul class="bul">' + map(d.research, function (r) {
         return '<li><b>' + esc(r.title) + '.</b> ' + esc(r.text) + '</li>';
       }) + '</ul>' +

@@ -35,6 +35,22 @@ Rules for editing JSON:
 
 Add it inside the `"experience": [ ... ]` list, separated from its neighbours by commas.
 
+### Adding an article (example)
+
+Add an entry to the `"writing": [ ... ]` list. Articles are sorted newest first automatically and appear on the website (Writing section) and on the CV page.
+
+```json
+{
+  "title": "Headline of the article",
+  "outlet": "Business Mirror",
+  "edition": "Nogor Edition",
+  "date": "2026-11-19",
+  "type": "Newspaper article",
+  "url": "https://...",
+  "summary": "One sentence on what the article argues."
+}
+```
+
 ## Files
 
 | File | Purpose |
