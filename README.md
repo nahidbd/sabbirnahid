@@ -52,6 +52,14 @@ Add an entry to the `"writing": [ ... ]` list. Articles are sorted newest first 
 }
 ```
 
+## SEO
+
+- `functions/_middleware.js` (a Cloudflare Pages Function) fills each page with its content from `content/site.json` before it is sent, so search engines and LinkedIn/WhatsApp/Facebook link previews see the full page. `_routes.json` limits it to the two HTML pages.
+- Page titles, descriptions, keywords and the social image are set in the `"seo"` block of `content/site.json`.
+- Structured data (schema.org Person, ProfilePage, WebSite and one NewsArticle per entry in `writing`) is generated automatically.
+- **Search engine verification:** paste the code from Google Search Console into `"googleVerification"` (or from Bing Webmaster Tools into `"bingVerification"`) and commit.
+- When you add a page or move to a custom domain, update `seo.url`, `robots.txt` and `sitemap.xml`.
+
 ## Files
 
 | File | Purpose |
@@ -60,8 +68,12 @@ Add an entry to the `"writing": [ ... ]` list. Articles are sorted newest first 
 | `index.html` | Website page layout |
 | `cv.html` | CV page layout (served at `/cv`) |
 | `assets/css/style.css` | Design: colours, fonts, layout |
-| `assets/js/site.js` | Builds the pages from `site.json` |
-| `_headers` | Security headers for Cloudflare Pages |
+| `assets/js/site.js` | Browser script (print button; renders pages when previewed locally) |
+| `_headers` | Security and caching headers for Cloudflare Pages |
+| `functions/_middleware.js` | Server-side rendering for search engines and link previews |
+| `assets/js/render.mjs` | Shared renderer used by the browser and the Function |
+| `robots.txt`, `sitemap.xml` | Search engine crawling instructions and page list |
+| `assets/img/og.png` | Image shown when the site is shared on social media |
 
 ## Hosting
 

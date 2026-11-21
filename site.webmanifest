@@ -1,0 +1,12 @@
+{
+  "name": "Sabbir Ahmed Nahid",
+  "short_name": "S. A. Nahid",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#1e3a6e",
+  "background_color": "#f5f6f9",
+  "display": "browser",
+  "start_url": "/"
+}

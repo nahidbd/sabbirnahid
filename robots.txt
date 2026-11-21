@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sabbirnahid.pages.dev/sitemap.xml
