@@ -1,5 +1,12 @@
 {
   "version": 1,
-  "include": ["/", "/index.html", "/cv", "/cv/", "/cv.html"],
+  "include": [
+    "/",
+    "/index.html",
+    "/cv",
+    "/cv/",
+    "/cv.html",
+    "/googled790b3d17c26fccc.html"
+  ],
   "exclude": []
 }
