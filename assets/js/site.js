@@ -136,12 +136,16 @@
 
     set("writing-list", byDate(d.writing).length ? map(byDate(d.writing), function (w) {
       var dt = parts(w.date);
-      return '<a class="card wpost" href="' + esc(w.url) + '" rel="noopener">' +
+      return '<article class="card wpost">' +
         '<time datetime="' + esc(w.date) + '">' + (dt ? '<b>' + dt.d + '</b>' + dt.m + ' ' + dt.y : esc(w.date)) + '</time>' +
-        '<div><span class="chip">' + esc(w.type || "Article") + '</span><h3>' + esc(w.title) + '</h3>' +
+        '<div><span class="chip">' + esc(w.type || "Article") + '</span>' +
+        '<h3><a href="' + esc(w.url) + '" rel="noopener">' + esc(w.title) + '</a></h3>' +
         '<p class="src">' + esc(w.outlet) + (w.edition ? ' · ' + esc(w.edition) : '') + '</p>' +
-        (w.summary ? '<p class="sum">' + esc(w.summary) + '</p>' : '') + '</div>' +
-        '<span class="go">Read →</span></a>';
+        (w.summary ? '<p class="sum">' + esc(w.summary) + '</p>' : '') +
+        '<p class="wlinks"><a href="' + esc(w.url) + '" rel="noopener">Read online →</a>' +
+        (w.print && w.print.url ? '<a href="' + esc(w.print.url) + '" rel="noopener">' + esc(w.print.label || "Print edition") + ' →</a>' : '') + '</p>' +
+        (w.tags && w.tags.length ? '<div class="tags">' + map(w.tags, function (t) { return '<span class="chip">' + esc(t) + '</span>'; }) + '</div>' : '') +
+        '</div></article>';
     }) : '<p>Articles will appear here.</p>');
 
     var edu = function (items) {
@@ -210,6 +214,7 @@
       '<h2>Languages</h2>' + two(d.languages) +
       (d.writing && d.writing.length ? '<h2>Articles &amp; publications</h2><ul class="bul">' + map(byDate(d.writing), function (w) {
         return '<li><b>' + esc(w.title) + '.</b> ' + esc(w.outlet) + (w.edition ? ', ' + esc(w.edition) : '') + ', ' + longDate(w.date) +
+          (w.print && w.print.label ? ' (' + esc(w.print.label.replace(/^Print:\s*/, 'print: ')) + ')' : '') +
           '. <a href="' + esc(w.url) + '">' + esc(shortUrl(w.url)) + '</a></li>';
       }) + '</ul>' : '') +
       '<h2>Research &amp; analysis</h2><ul class="bul">' + map(d.research, function (r) {

@@ -43,11 +43,12 @@ Add an entry to the `"writing": [ ... ]` list. Articles are sorted newest first 
 {
   "title": "Headline of the article",
   "outlet": "Business Mirror",
-  "edition": "Nogor Edition",
   "date": "2026-11-19",
-  "type": "Newspaper article",
+  "type": "Op-ed",
   "url": "https://...",
-  "summary": "One sentence on what the article argues."
+  "print": { "label": "Print: Nogor Edition, 19 Nov 2026, p. 4", "url": "https://epaper..." },
+  "summary": "One or two sentences on what the article argues.",
+  "tags": ["E-Governance"]
 }
 ```
 

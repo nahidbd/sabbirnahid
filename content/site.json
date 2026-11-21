@@ -562,13 +562,21 @@
   ],
   "writing": [
     {
-      "title": "Article in Business Mirror (Country Mirror page)",
+      "title": "Going Online Is Not Going Digital",
       "outlet": "Business Mirror",
-      "edition": "Nogor Edition",
-      "date": "2026-11-19",
-      "type": "Newspaper article",
-      "url": "https://epaper.bmirror.net/nogor-edition/2026-11-19/4",
-      "summary": ""
+      "type": "Op-ed",
+      "date": "2026-11-18",
+      "url": "https://bmirror.net/going-online-is-not-going-digital/",
+      "print": {
+        "label": "Print: Nogor Edition, 19 Nov 2026, p. 4 (Op-Ed Mirror)",
+        "url": "https://epaper.bmirror.net/nogor-edition/2026-11-19/4"
+      },
+      "summary": "Many public services in Bangladesh have moved onto screens without changing how they work, so citizens still face repeated paperwork and office visits. Real digital transformation means simplifying processes before automating them, sharing data between offices, protecting that data, and designing services everyone can use.",
+      "tags": [
+        "E-Governance",
+        "Digital Public Infrastructure",
+        "Digital Bangladesh"
+      ]
     }
   ],
   "education": [
