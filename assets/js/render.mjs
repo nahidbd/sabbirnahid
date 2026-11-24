@@ -24,63 +24,99 @@ var icon = {
 
 function header(d, page) {
   var p = d.person, h = page === "cv" ? "/" : "";
-  var item = function (href, label, opt) {
-    return '<li' + (opt ? ' class="opt"' : '') + '><a href="' + h + href + '">' + label + '</a></li>';
-  };
-  return '<div class="wrap">' +
-    '<a class="mark" href="/"><b>' + esc(p.initials) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.shortHeadline || p.headline) + '</small></span></a>' +
+  var links = [["#about", "About"], ["#expertise", "Expertise"], ["#experience", "Experience"], ["#case", "Projects"],
+    ["#writing", "Writing"], ["#credentials", "Credentials"], ["#contact", "Contact"]];
+  return '<div class="rail">' +
+    '<a class="mark" href="/"><b>' + esc(p.name) + '</b><small>' + esc(p.shortHeadline || p.headline) + '</small></a>' +
     '<nav aria-label="Sections"><ul>' +
-      item("#about", "About", true) + item("#expertise", "Expertise", true) + item("#experience", "Experience", true) +
-      item("#case", "Work", true) + item("#writing", "Writing", true) + item("#credentials", "Credentials", true) + item("#contact", "Contact", false) +
-      '<li><a class="nav-cv" href="/cv"' + (page === "cv" ? ' aria-current="page"' : '') + '>CV</a></li>' +
-    '</ul></nav></div>';
+      map(links, function (l) { return '<li><a href="' + h + l[0] + '">' + l[1] + '</a></li>'; }) +
+      '<li class="cvlink"><a href="/cv"' + (page === "cv" ? ' aria-current="page"' : '') + '>Full CV</a></li>' +
+    '</ul></nav>' +
+    '<p class="rail-foot"><a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a></p></div>';
 }
 
 function footer(d) {
-  return '<div class="wrap"><span>© ' + (d.year || new Date().getFullYear()) + ' ' + esc(d.person.name) + '</span><span>' +
-    esc(d.person.headline) + '</span></div>';
+  return '<p>© ' + (d.year || new Date().getFullYear()) + ' ' + esc(d.person.name) + '. ' + esc(d.person.location) + '.</p>';
 }
 
-function avatar(p) {
-  return '<div class="avatar">' + (p.photo ? '<img src="' + esc(p.photo) + '" alt="' + esc(p.name) + '">' : esc(p.initials)) + '</div>';
+/* The delta: one river of DPI governance splitting into the sectors worked in. Drawn from the content, so it updates with site.json. */
+function rng(seed) { return function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+function smooth(pts) {
+  var f = function (n) { return n.toFixed(1); };
+  var dd = "M" + f(pts[0][0]) + " " + f(pts[0][1]);
+  for (var i = 0; i < pts.length - 1; i++) {
+    var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    dd += " C" + f(p1[0] + (p2[0] - p0[0]) / 6) + " " + f(p1[1] + (p2[1] - p0[1]) / 6) + " " +
+      f(p2[0] - (p3[0] - p1[0]) / 6) + " " + f(p2[1] - (p3[1] - p1[1]) / 6) + " " + f(p2[0]) + " " + f(p2[1]);
+  }
+  return dd;
+}
+function delta(d) {
+  var secs = d.sectors || [], n = secs.length || 1, r = rng(11), idx = 0;
+  var sx = 270, sy = 250, ey = 528;
+  var out = [];
+  var path = function (pts, w, cls) {
+    out.push('<path class="' + cls + '" style="--i:' + (idx++) + '" pathLength="1" stroke-width="' + w + '" d="' + smooth(pts) + '"/>');
+  };
+  var trunk = [[sx - 6, -4], [sx - 24, 62], [sx + 10, 140], [sx - 8, 200], [sx, sy]];
+  // small tributaries joining the main river from both banks
+  path([[30, 70], [110, 92], [190, 128], [sx - 12, 170]], 1.4, "trib");
+  path([[510, 40], [440, 100], [350, 120], [sx + 8, 148]], 1.4, "trib");
+  path([[60, 190], [130, 200], [210, 214], [sx - 6, 214]], 1, "trib");
+  path(trunk, 5, "main");
+  var ends = [];
+  secs.forEach(function (s, i) {
+    var ex = n === 1 ? sx : 80 + i * (380 / (n - 1)), t = ex - sx, j = function () { return (r() - 0.5) * 22; };
+    var pts = [[sx, sy], [sx + t * 0.16 + j(), sy + 52], [sx + t * 0.52 + j(), sy + 120], [ex + j() * 0.5, sy + 205], [ex, ey]];
+    path(pts, 3, "arm");
+    // twigs: tiny side channels off each arm
+    var tw = pts[2];
+    path([tw, [tw[0] + (t >= 0 ? 22 : -22) + j() * 0.4, tw[1] + 34], [tw[0] + (t >= 0 ? 34 : -34), tw[1] + 78]], 1.2, "twig");
+    var tw2 = pts[3];
+    path([tw2, [tw2[0] + (t >= 0 ? -16 : 16), tw2[1] + 20], [tw2[0] + (t >= 0 ? -22 : 22), tw2[1] + 46]], 1, "twig");
+    ends.push('<g class="end" style="--i:' + (idx + i) + '"><circle cx="' + ex.toFixed(1) + '" cy="' + ey + '" r="5"/><text x="' + ex.toFixed(1) + '" y="' + (ey + 30) + '" text-anchor="middle">' + esc(s.tag || s.name) + '</text></g>');
+  });
+  var src = '<g class="end" style="--i:0"><circle cx="' + (sx - 6) + '" cy="2" r="5"/><text x="' + (sx + 14) + '" y="30">' + esc((d.specialism && d.specialism.title) || "") + '</text></g>';
+  var label = "Illustration: one river, " + ((d.specialism && d.specialism.title) || "DPI governance") + ", splitting into " +
+    secs.map(function (s) { return s.name; }).join(", ");
+  return '<svg viewBox="0 0 540 590" role="img" aria-label="' + esc(label) + '" fill="none" stroke-linecap="round" stroke-linejoin="round">' +
+    out.join("") + src + ends.join("") + '</svg>';
 }
 
 function home(d) {
   var p = d.person, out = {};
   var set = function (id, html) { out[id] = html; };
 
-  set("profile", '<div class="wrap">' +
-    '<div>' +
-      '<div class="id">' + avatar(p) + '<p class="mono">' + esc(p.location) + ' · ' + esc(p.timezone) + '</p></div>' +
+  set("profile", '<div class="hero-copy">' +
+      '<p class="where">' + esc(p.location) + ', ' + esc(p.timezone) + '</p>' +
+      (p.photo ? '<img class="portrait" src="' + esc(p.photo) + '" alt="' + esc(p.name) + '">' : '') +
       '<h1>' + esc(p.name) + '</h1>' +
       '<p class="title">' + esc(p.title) + '</p>' +
       '<p class="summary">' + esc(d.summary) + '</p>' +
       '<div class="actions">' +
-        '<a class="btn solid" href="mailto:' + esc(p.email) + '">' + icon.mail + 'Email me</a>' +
-        '<a class="btn line" href="' + esc(p.linkedin) + '" rel="noopener">' + icon.in + 'LinkedIn</a>' +
-        '<a class="btn line" href="/cv">' + icon.doc + 'View CV</a>' +
+        '<a class="btn solid" href="mailto:' + esc(p.email) + '">Email me</a>' +
+        '<a class="lnk" href="' + esc(p.linkedin) + '" rel="noopener">LinkedIn</a>' +
+        '<a class="lnk" href="/cv">Read the full CV</a>' +
       '</div>' +
+      '<p class="avail"><i></i>' + esc(p.availability) + '</p>' +
     '</div>' +
-    '<aside class="glance" aria-label="At a glance"><h2>At a glance</h2><dl>' +
-      map(d.glance, function (g) { return '<div><dt>' + esc(g.label) + '</dt><dd>' + esc(g.value) + '</dd></div>'; }) +
-    '</dl><p class="avail"><i></i>' + esc(p.availability) + '</p></aside>' +
-  '</div>');
+    '<figure class="delta">' + delta(d) + '</figure>');
 
-  set("stats", map(d.stats, function (s) { return '<li><b>' + esc(s.value) + '</b><span>' + esc(s.label) + '</span></li>'; }));
+  set("stats", map(d.stats, function (s) { return '<li><b>' + esc(s.value) + '</b> ' + esc(s.label) + '</li>'; }));
 
   set("about-text", map(d.about, function (t) { return '<p>' + esc(t) + '</p>'; }));
-  set("tee", '<p class="cap">T-shaped expertise: one deep discipline, applied across sectors.</p>' +
-    '<div class="bar">' + map(d.sectors, function (s) { return '<div class="cell">' + esc(s.name) + '</div>'; }) + '</div>' +
-    '<div class="stem"><strong>' + esc(d.specialism.title) + '</strong><ol style="list-style:none;margin:0;padding:0">' +
-      map(d.specialism.layers, function (l) { return '<li>' + esc(l) + '</li>'; }) + '</ol></div>');
+  set("tee", '<h3>' + esc(d.specialism.title) + ' covers</h3><ul>' +
+      map(d.specialism.layers, function (l) { return '<li>' + esc(l) + '</li>'; }) + '</ul>' +
+    '<p class="note">Applied in ' + esc(d.sectors.map(function (s) { return s.name; }).join(", ")) + '.</p>');
 
-  set("expertise-grid", map(d.expertise, function (x, i) {
-    return '<div class="card xcard"><h3><span>' + pad(i + 1) + '</span>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p>' +
-      (x.tags && x.tags.length ? '<div class="tags">' + map(x.tags, function (t) { return '<span class="chip">' + esc(t) + '</span>'; }) + '</div>' : '') +
-      '</div>';
+  set("glance", map(d.glance, function (g) { return '<div><dt>' + esc(g.label) + '</dt><dd>' + esc(g.value) + '</dd></div>'; }));
+
+  set("expertise-grid", map(d.expertise, function (x) {
+    return '<div class="xi"><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p>' +
+      (x.tags && x.tags.length ? '<p class="xt">' + esc(x.tags.join(", ")) + '</p>' : '') + '</div>';
   }));
   set("sectors", map(d.sectors, function (s) {
-    return '<div class="card sector"><span class="chip">' + esc(s.tag) + '</span><h4>' + esc(s.name) + '</h4><p>' + esc(s.text) + '</p></div>';
+    return '<div class="sec"><h4>' + esc(s.name) + '</h4><p>' + esc(s.text) + '</p></div>';
   }));
 
   var groupsHtml = function (groups) {
@@ -93,17 +129,15 @@ function home(d) {
     var n = (e.groups || []).reduce(function (t, g) { return t + (g.items || []).length; }, 0);
     var body = groupsHtml(e.groups);
     var open = i < 2 || n <= 1;
-    return '<div class="job' + (e.current ? ' now' : '') + '"><div class="card"><header><h3>' + esc(e.role) + '</h3>' +
-      '<span class="chip">' + esc(e.period) + '</span></header>' +
-      '<p class="org">' + esc(e.org) + '</p>' + (e.project ? '<p class="proj">' + esc(e.project) + '</p>' : '') +
+    return '<article class="job' + (e.current ? ' now' : '') + '"><p class="when">' + esc(e.period) + '</p><div class="what">' +
+      '<h3>' + esc(e.role) + '</h3><p class="org">' + esc(e.org) + '</p>' + (e.project ? '<p class="proj">' + esc(e.project) + '</p>' : '') +
       (n ? (open ? body : '<details><summary><span class="more">Show responsibilities (' + n + ')</span><span class="less">Hide responsibilities</span></summary>' + body + '</details>') : '') +
-      '</div></div>';
+      '</div></article>';
   }));
-  set("partners", '<span class="mono">Programmes funded by</span>' +
-    map(d.partners, function (x) { return '<span class="p">' + esc(x) + '</span>'; }));
+  set("partners", '<p>Programmes funded by ' + esc((d.partners || []).slice(0, -1).join(", ")) + ' and ' + esc((d.partners || []).slice(-1)[0] || "") + '.</p>');
 
   var c = d.caseStudy;
-  set("case-study", '<div class="case-head"><div><p class="mono">Case study</p><h3>' + esc(c.name) + '</h3></div>' +
+  set("case-study", '<div class="case-head"><div><h3>' + esc(c.name) + '</h3></div>' +
       '<dl><div><dt>Client</dt><dd>' + esc(c.client) + '</dd></div><div><dt>Funded by</dt><dd>' + esc(c.funder) + '</dd></div>' +
       '<div><dt>My role</dt><dd>' + esc(c.role) + '</dd></div></dl></div>' +
     '<div class="case-body"><div class="case-cols">' +
@@ -116,34 +150,30 @@ function home(d) {
     }) + '</div></div>');
 
   set("projects", map(d.projects, function (x) {
-    return '<article class="card pcard"><h3>' + esc(x.name) + '</h3><p class="meta">' + esc(x.funder) + ' · ' + esc(x.period) + '</p><p>' + esc(x.text) + '</p></article>';
+    return '<article class="pi"><h3>' + esc(x.name) + '</h3><p class="meta">' + esc(x.funder) + ', ' + esc(x.period) + '</p><p>' + esc(x.text) + '</p></article>';
   }));
 
-  set("steps", map(d.approach, function (s) { return '<div class="step"><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div>'; }));
+  set("steps", map(d.approach, function (s, i) { return '<li><span>' + (i + 1) + '</span><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></li>'; }));
 
   var f = d.firm;
   set("firm-name", esc(f.name));
-  set("firm", '<div><p class="mono">' + esc(f.kind) + '</p><p class="tag">' + esc(f.tagline) + '</p><p>' + esc(f.text) + '</p></div>' +
+  set("firm", '<div class="firm-copy"><p class="kind">' + esc(f.kind) + '</p><p class="tag">' + esc(f.tagline) + '</p><p>' + esc(f.text) + '</p></div>' +
     '<div class="services">' + map(f.services, function (s) {
-      return '<div class="card"><h4>' + esc(s.title) + '</h4><p>' + esc(s.text) + '</p></div>';
+      return '<div><h4>' + esc(s.title) + '</h4><p>' + esc(s.text) + '</p></div>';
     }) + '</div>');
 
   set("papers", map(d.research, function (r) {
-    return '<article class="card paper' + (r.featured ? ' feature' : '') + '"><span class="chip" style="align-self:start">' + esc(r.type) +
-      '</span><h3>' + esc(r.title) + '</h3><p>' + esc(r.text) + '</p></article>';
+    return '<article class="ri' + (r.featured ? ' feature' : '') + '"><p class="kind">' + esc(r.type) + '</p><h3>' + esc(r.title) + '</h3><p>' + esc(r.text) + '</p></article>';
   }));
 
   set("writing-list", byDate(d.writing).length ? map(byDate(d.writing), function (w) {
-    var dt = parts(w.date);
-    return '<article class="card wpost">' +
-      '<time datetime="' + esc(w.date) + '">' + (dt ? '<b>' + dt.d + '</b>' + dt.m + ' ' + dt.y : esc(w.date)) + '</time>' +
-      '<div><span class="chip">' + esc(w.type || "Article") + '</span>' +
+    return '<article class="wpost"><time datetime="' + esc(w.date) + '">' + longDate(w.date) + '</time><div>' +
       '<h3><a href="' + esc(w.url) + '" rel="noopener">' + esc(w.title) + '</a></h3>' +
-      '<p class="src">' + esc(w.outlet) + (w.edition ? ' · ' + esc(w.edition) : '') + '</p>' +
+      '<p class="src">' + esc(w.type || "Article") + ' in ' + esc(w.outlet) + (w.edition ? ', ' + esc(w.edition) : '') + '</p>' +
       (w.summary ? '<p class="sum">' + esc(w.summary) + '</p>' : '') +
-      '<p class="wlinks"><a href="' + esc(w.url) + '" rel="noopener">Read online →</a>' +
-      (w.print && w.print.url ? '<a href="' + esc(w.print.url) + '" rel="noopener">' + esc(w.print.label || "Print edition") + ' →</a>' : '') + '</p>' +
-      (w.tags && w.tags.length ? '<div class="tags">' + map(w.tags, function (t) { return '<span class="chip">' + esc(t) + '</span>'; }) + '</div>' : '') +
+      '<p class="wlinks"><a href="' + esc(w.url) + '" rel="noopener">Read online</a>' +
+      (w.print && w.print.url ? '<a href="' + esc(w.print.url) + '" rel="noopener">' + esc(w.print.label || "Print edition") + '</a>' : '') + '</p>' +
+      (w.tags && w.tags.length ? '<p class="xt">' + esc(w.tags.join(", ")) + '</p>' : '') +
       '</div></article>';
   }) : '<p>Articles will appear here.</p>');
 
@@ -157,20 +187,15 @@ function home(d) {
     return '<li><b>' + esc(x.role) + '</b><span>' + esc(x.org) + ' · ' + esc(x.period) + '</span>' + (x.text ? '<p>' + esc(x.text) + '</p>' : '') + '</li>';
   }));
   set("badges", map(d.certifications, function (c) {
-    return '<div class="badge"><b>' + esc(c.short || c.title) + '</b>' + (c.short && c.short !== c.title ? '<span>' + esc(c.title) + '</span>' : '') +
-      (c.detail ? '<small>' + esc(c.detail) + '</small>' : '') + '</div>';
+    return '<li><b>' + esc(c.short || c.title) + '</b>' + (c.short && c.short !== c.title ? '<span>' + esc(c.title) + '</span>' : '') +
+      (c.detail ? '<small>' + esc(c.detail) + '</small>' : '') + '</li>';
   }));
 
-  set("contact", '<div class="wrap"><div><h2>' + esc(d.contact.heading) + '</h2><p>' + esc(d.contact.text) + '</p>' +
-      '<div class="actions"><a class="btn solid" href="mailto:' + esc(p.email) + '">' + icon.mail + 'Email me</a>' +
-      '<a class="btn line" href="' + esc(p.linkedin) + '" rel="noopener">' + icon.in + 'Connect on LinkedIn</a></div></div>' +
-    '<dl>' +
-      '<div><dt>Email</dt><dd><a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a></dd></div>' +
-      '<div><dt>LinkedIn</dt><dd><a href="' + esc(p.linkedin) + '" rel="noopener">' + esc(shortUrl(p.linkedin)) + '</a></dd></div>' +
-      (p.phone ? '<div><dt>Phone</dt><dd><a href="tel:' + esc(p.phone.replace(/\s/g, '')) + '">' + esc(p.phone) + '</a></dd></div>' : '') +
-      '<div><dt>Location</dt><dd>' + esc(p.location) + ' (' + esc(p.timezone) + ')</dd></div>' +
-      '<div><dt>Availability</dt><dd>' + esc(p.availability) + '</dd></div>' +
-    '</dl></div>');
+  set("contact", '<div class="contact-in"><h2>' + esc(d.contact.heading) + '</h2><p>' + esc(d.contact.text) + '</p>' +
+    '<p class="big"><a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a></p>' +
+    '<p class="more-links"><a href="' + esc(p.linkedin) + '" rel="noopener">LinkedIn</a><a href="/cv">Full CV</a>' +
+    (p.phone ? '<a href="tel:' + esc(p.phone.replace(/\\s/g, '')) + '">' + esc(p.phone) + '</a>' : '') + '</p>' +
+    '<p class="avail"><i></i>' + esc(p.availability) + ', ' + esc(p.location) + ' (' + esc(p.timezone) + ')</p></div>');
   return out;
 }
 

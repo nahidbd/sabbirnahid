@@ -9,111 +9,95 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#1e3a6e">
+<meta name="theme-color" content="#F4F8F7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body data-page="home">
 
 <header class="top" id="site-header"></header>
 
+<div class="col">
 <main id="top">
-  <section class="profile" id="profile" aria-label="Profile"></section>
-  <div class="stats"><div class="wrap"><ul id="stats"></ul></div></div>
+  <section class="hero" id="profile" aria-label="Profile"></section>
+  <div class="hero-facts">
+    <ul class="stats" id="stats"></ul>
+    <dl class="glance" id="glance"></dl>
+  </div>
 
-  <section class="block" id="about">
-    <div class="wrap">
-      <div class="sh"><p class="mono">About</p><h2>Governance first, technology in service of it</h2></div>
-      <div class="about">
-        <div class="prose" id="about-text"></div>
-        <figure class="tee" id="tee" style="margin:0"></figure>
+  <section class="blk" id="about">
+    <div class="sh"><h2>Governance first, technology in service of it</h2></div>
+    <div class="about">
+      <div class="prose" id="about-text"></div>
+      <aside class="tee" id="tee"></aside>
+    </div>
+  </section>
+
+  <section class="blk" id="expertise">
+    <div class="sh"><h2>Where I work</h2><p>Seven areas of practice, used together across the life of a public digital system, from analysis and policy to design, delivery and adoption.</p></div>
+    <div class="xgrid" id="expertise-grid"></div>
+    <h3 class="sub">Sectors</h3>
+    <div class="sectors" id="sectors"></div>
+  </section>
+
+  <section class="blk" id="experience">
+    <div class="sh"><h2>Experience</h2><p>Twenty years across UN, USAID and British Council programmes, from software development and ICT operations to national digital public infrastructure.</p></div>
+    <div class="timeline" id="timeline"></div>
+    <div class="partners" id="partners"></div>
+  </section>
+
+  <section class="blk" id="case">
+    <div class="sh"><h2>Projects</h2><p>National-scale systems I have designed, delivered or documented for the Government of Bangladesh.</p></div>
+    <article class="case" id="case-study"></article>
+    <div class="projects" id="projects"></div>
+  </section>
+
+  <section class="blk" id="approach">
+    <div class="sh"><h2>How I work</h2><p>Every assignment moves through the same four stages, so systems stay owned and sustained after the project ends.</p></div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="blk" id="practice">
+    <div class="sh"><h2 id="firm-name">Synapse Consulting</h2></div>
+    <div class="firm" id="firm"></div>
+  </section>
+
+  <section class="blk" id="research">
+    <div class="sh"><h2>Research and analysis</h2><p>Independent and academic work that informs my practice.</p></div>
+    <div class="research" id="papers"></div>
+  </section>
+
+  <section class="blk" id="writing">
+    <div class="sh"><h2>Writing</h2><p>Published articles on e-governance, digital public infrastructure and public service reform.</p></div>
+    <div class="writing" id="writing-list"></div>
+  </section>
+
+  <section class="blk" id="credentials">
+    <div class="sh"><h2>Education, certification and memberships</h2></div>
+    <div class="creds">
+      <div>
+        <h3>Education</h3>
+        <ul class="edu" id="education"></ul>
+        <h3 class="gap">Languages</h3>
+        <ul class="edu" id="languages"></ul>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <ul class="badges" id="badges"></ul>
       </div>
     </div>
-  </section>
-
-  <section class="block alt" id="expertise">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Expertise</p><h2>Thematic expertise</h2><p>Seven areas I work across, used together over the full life of a public digital system: from analysis and policy to design, delivery and adoption.</p></div>
-      <div class="xgrid" id="expertise-grid"></div>
-      <h3 class="subhead">Sector experience</h3>
-      <div class="sectors" id="sectors"></div>
-    </div>
-  </section>
-
-  <section class="block" id="experience">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Experience</p><h2>Professional experience</h2><p>Twenty years across UN, USAID and British Council programmes, from software development and ICT operations to national digital public infrastructure.</p></div>
-      <div class="timeline" id="timeline"></div>
-      <div class="partners" id="partners"></div>
-    </div>
-  </section>
-
-  <section class="block alt" id="case">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Selected projects</p><h2>Selected project deliverables</h2><p>National-scale systems I have designed, delivered or documented for the Government of Bangladesh.</p></div>
-      <article class="case" id="case-study"></article>
-      <div class="projects" id="projects"></div>
-    </div>
-  </section>
-
-  <section class="block" id="approach">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Approach</p><h2>How I work</h2><p>Every assignment moves through the same four stages, so systems are owned and sustained after the project ends.</p></div>
-      <div class="steps" id="steps"></div>
-    </div>
-  </section>
-
-  <section class="block alt" id="practice">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Practice</p><h2 id="firm-name">Synapse Consulting</h2></div>
-      <div class="firm" id="firm"></div>
-    </div>
-  </section>
-
-  <section class="block" id="research">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Research</p><h2>Research and analysis</h2><p>Independent and academic work that informs my practice.</p></div>
-      <div class="research" id="papers"></div>
-    </div>
-  </section>
-
-  <section class="block alt" id="writing">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Writing</p><h2>Articles and publications</h2><p>My published writing on e-governance, digital public infrastructure and public service reform.</p></div>
-      <div class="writing" id="writing-list"></div>
-    </div>
-  </section>
-
-  <section class="block" id="credentials">
-    <div class="wrap">
-      <div class="sh"><p class="mono">Credentials</p><h2>Education, certification and memberships</h2></div>
-      <div class="creds">
-        <div>
-          <h3>Education</h3>
-          <ul class="edu" id="education"></ul>
-          <div class="community">
-            <h3>Languages</h3>
-            <ul class="edu" id="languages"></ul>
-          </div>
-        </div>
-        <div>
-          <h3>Certifications</h3>
-          <div class="badges" id="badges"></div>
-        </div>
-      </div>
-      <div class="creds2">
-        <div class="card"><h3>Professional memberships</h3><ul class="ticks" id="memberships"></ul></div>
-        <div class="card"><h3>Additional activities</h3><ul class="edu" id="additional"></ul></div>
-      </div>
+    <div class="creds2">
+      <div><h3>Professional memberships</h3><ul class="plain" id="memberships"></ul></div>
+      <div><h3>Additional activities</h3><ul class="edu" id="additional"></ul></div>
     </div>
   </section>
 
   <section class="contact" id="contact" aria-label="Contact"></section>
 </main>
-
 <footer id="site-footer"></footer>
+</div>
 <script type="module" src="/assets/js/site.js"></script>
 </body>
 </html>
